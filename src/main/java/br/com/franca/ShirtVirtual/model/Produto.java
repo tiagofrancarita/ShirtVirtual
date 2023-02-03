@@ -15,48 +15,49 @@ public class Produto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_produto")
-    @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "tipo_unidade", nullable = false)
+    @Column(name = "tipo_unidade")
     private String tipoUnidade;
 
-    @Column(name = "nome_produto", nullable = false)
+    @Column(name = "nome_produto")
     private String nome;
 
-    @Column(name = "descricao_produto", nullable = false, columnDefinition = "text", length = 2000)
+    @Column(name = "descricao_produto", columnDefinition = "text", length = 2000)
     private String descricaoProduto;
 
-    // private NotaItemProduto notaItemProduto;
+    /** Nota item nota produto - ASSOCIAR
+        private NotaItemProduto notaItemProduto
+    **/
 
-    @Column(name = "peso_produto", nullable = false)
+    @Column(name = "peso_produto")
     private Double peso;
 
-    @Column(name = "largura_produto", nullable = false)
+    @Column(name = "largura_produto")
     private Double largura;
 
-    @Column(name = "altura_produto", nullable = false)
+    @Column(name = "altura_produto")
     private Double altura;
 
-    @Column(name = "profundidade_produto", nullable = false)
+    @Column(name = "profundidade_produto")
     private Double profundidade;
 
-    @Column(name = "valor_total_venda", nullable = false)
+    @Column(name = "valor_total_venda")
     private BigDecimal valorTotalVenda;
 
-    @Column(name = "quantidade_estoque_produto", nullable = false)
+    @Column(name = "quantidade_estoque_produto")
     private Integer qtdEstoque;
 
-    @Column(name = "quantidade_alerta_estoque_produto", nullable = false)
+    @Column(name = "quantidade_alerta_estoque_produto")
     private Integer qtdAlertaEstoque;
 
-    @Column(name = "link_youtube_produto", nullable = false)
+    @Column(name = "link_youtube_produto")
     private String linkYT;
 
-    @Column(name = "alerta_quantidade_estoque", nullable = false)
+    @Column(name = "alerta_quantidade_estoque")
     private Boolean alertaQtdEstoque;
 
-    @Column(name = "quantidade_clique_produto", nullable = false)
+    @Column(name = "quantidade_clique_produto")
     private Integer qtdClickProduto;
 
     public Long getId() {

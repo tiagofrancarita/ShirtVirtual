@@ -11,11 +11,11 @@ public class PessoaFisica extends Pessoa {
 
     private static final long serialVersionUID = 1L;
 
-    @Column(name = "cpf", nullable = false)
+    @Column(name = "cpf")
     private String cpf;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "data_nascimento", nullable = false)
+    @Column(name = "data_nascimento")
     private Date dataNascimento;
 
     public String getCpf() {

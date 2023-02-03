@@ -17,7 +17,6 @@ public class ContaPagar implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_conta_pagar")
-    @Column(name = "id", nullable = false)
     private Long id;
 
     @ManyToOne(targetEntity = Pessoa.class)
@@ -35,17 +34,17 @@ public class ContaPagar implements Serializable {
     private StatusContaPagar statusContaPagar;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "data_vencimento_conta_receber", nullable = false)
+    @Column(name = "data_vencimento_conta_receber")
     private Date dtVencimento;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "data_pagamento_conta_receber", nullable = false)
+    @Column(name = "data_pagamento_conta_receber")
     private Date dtPagamento;
 
-    @Column(name = "valor_total_conta_receber", nullable = false)
-    private BigDecimal valorTotal = BigDecimal.valueOf(0.00);
+    @Column(name = "valor_total_conta_receber")
+    private BigDecimal valorTotal;
 
-    @Column(name = "valor_desconto_conta_receber", nullable = false)
+    @Column(name = "valor_desconto_conta_receber")
     private BigDecimal valorDesconto = BigDecimal.valueOf(0.00);
 
     public Long getId() {

@@ -19,17 +19,16 @@ public class Usuario implements Serializable, UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_usuario")
-    @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "login", nullable = false)
+    @Column(name = "login")
     private String login;
 
-    @Column(name = "senha", nullable = false)
+    @Column(name = "senha")
     private String senha;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "data_atual_senha", nullable = false)
+    @Column(name = "data_atual_senha")
     private Date dataAtualSenha;
 
     @OneToMany(fetch = FetchType.LAZY)
