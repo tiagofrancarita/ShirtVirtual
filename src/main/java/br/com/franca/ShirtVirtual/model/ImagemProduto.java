@@ -16,10 +16,10 @@ public class ImagemProduto implements Serializable {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "imagem_original", nullable = false, columnDefinition = "text")
+    @Column(name = "imagem_original", columnDefinition = "text")
     private String imagemOriginal;
 
-    @Column(name = "imagem_miniatura", nullable = false, columnDefinition = "text")
+    @Column(name = "imagem_miniatura", columnDefinition = "text")
     private String imagemMiniatura;
 
     @ManyToOne

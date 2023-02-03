@@ -17,7 +17,7 @@ public class Acesso implements GrantedAuthority {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_acesso")
     private Long id;
 
-    @Column(name = "descricao_acesso", nullable = false)
+    @Column(name = "descricao_acesso")
     private String descAcesso;
 
     @Override
