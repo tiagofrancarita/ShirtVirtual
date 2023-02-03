@@ -17,48 +17,48 @@ public class Produto implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_produto")
     private Long id;
 
-    @Column(name = "tipo_unidade")
+    @Column(name = "tipo_unidade", nullable = false)
     private String tipoUnidade;
 
-    @Column(name = "nome_produto")
+    @Column(name = "nome_produto", nullable = false)
     private String nome;
 
-    @Column(name = "descricao_produto", columnDefinition = "text", length = 2000)
+    @Column(name = "descricao_produto", columnDefinition = "text", length = 2000, nullable = false)
     private String descricaoProduto;
 
     /** Nota item nota produto - ASSOCIAR
         private NotaItemProduto notaItemProduto
     **/
 
-    @Column(name = "peso_produto")
+    @Column(name = "peso_produto", nullable = false)
     private Double peso;
 
-    @Column(name = "largura_produto")
+    @Column(name = "largura_produto", nullable = false)
     private Double largura;
 
-    @Column(name = "altura_produto")
+    @Column(name = "altura_produto", nullable = false)
     private Double altura;
 
-    @Column(name = "profundidade_produto")
+    @Column(name = "profundidade_produto", nullable = false)
     private Double profundidade;
 
-    @Column(name = "valor_total_venda")
+    @Column(name = "valor_total_venda", nullable = false)
     private BigDecimal valorTotalVenda;
 
-    @Column(name = "quantidade_estoque_produto")
+    @Column(name = "quantidade_estoque_produto", nullable = false)
     private Integer qtdEstoque;
 
-    @Column(name = "quantidade_alerta_estoque_produto")
+    @Column(name = "quantidade_alerta_estoque_produto", nullable = false)
     private Integer qtdAlertaEstoque;
 
     @Column(name = "link_youtube_produto")
     private String linkYT;
 
-    @Column(name = "alerta_quantidade_estoque")
-    private Boolean alertaQtdEstoque;
+    @Column(name = "alerta_quantidade_estoque", nullable = false)
+    private Boolean alertaQtdEstoque = true;
 
     @Column(name = "quantidade_clique_produto")
-    private Integer qtdClickProduto;
+    private Integer qtdClickProduto = 0;
 
     public Long getId() {
         return id;
