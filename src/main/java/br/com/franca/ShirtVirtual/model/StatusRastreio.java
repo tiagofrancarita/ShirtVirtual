@@ -16,16 +16,16 @@ public class StatusRastreio implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_status_rastreio")
     private Long id;
 
-    @Column(name = "centro_distribuicao")
+    @Column(name = "centro_distribuicao", nullable = false)
     private String centroDistribuicao;
 
-    @Column(name = "cidade")
+    @Column(name = "cidade", nullable = false)
     private String cidade;
 
-    @Column(name = "estado")
+    @Column(name = "estado", nullable = false)
     private String estado;
 
-    @Column(name = "status_rastreio")
+    @Column(name = "status_rastreio", nullable = false)
     private String statusRastreio;
 
     @ManyToOne

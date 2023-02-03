@@ -16,7 +16,7 @@ public class NotaItemProduto implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_nota_item_produto")
     private Long id;
 
-    @Column(name = "quantidade_produto")
+    @Column(name = "quantidade_produto", nullable = false)
     private Double quantidade;
 
     @ManyToOne

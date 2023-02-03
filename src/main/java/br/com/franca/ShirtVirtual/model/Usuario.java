@@ -21,14 +21,14 @@ public class Usuario implements Serializable, UserDetails {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_usuario")
     private Long id;
 
-    @Column(name = "login")
+    @Column(name = "login", nullable = false)
     private String login;
 
-    @Column(name = "senha")
+    @Column(name = "senha", nullable = false)
     private String senha;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "data_atual_senha")
+    @Column(name = "data_atual_senha", nullable = false)
     private Date dataAtualSenha;
 
     @OneToMany(fetch = FetchType.LAZY)

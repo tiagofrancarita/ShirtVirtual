@@ -15,19 +15,19 @@ public class NotaFiscalVenda implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_nota_fiscal_venda")
     private Long id;
 
-    @Column(name = "numero_nota_fiscal_venda")
+    @Column(name = "numero_nota_fiscal_venda", nullable = false)
     private String numeroNotaFiscalVenda;
 
-    @Column(name = "serie_nota_fiscal_venda")
+    @Column(name = "serie_nota_fiscal_venda", nullable = false)
     private String serieNotaFiscalVenda;
 
-    @Column(name = "tipo_nota_fiscal_venda")
+    @Column(name = "tipo_nota_fiscal_venda", nullable = false)
     private String tipoNotaFiscalVenda;
 
-    @Column(name = "xml_nota_fiscal_venda", columnDefinition = "text")
+    @Column(name = "xml_nota_fiscal_venda", columnDefinition = "text", nullable = false)
     private String xmlNotaFiscalVenda;
 
-    @Column(name = "pdf_nota_fiscal_venda", columnDefinition = "text")
+    @Column(name = "pdf_nota_fiscal_venda", columnDefinition = "text", nullable = false)
     private String pdfNotaFiscalVenda;
 
     @OneToOne

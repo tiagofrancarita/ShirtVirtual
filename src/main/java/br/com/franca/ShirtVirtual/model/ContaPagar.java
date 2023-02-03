@@ -31,20 +31,21 @@ public class ContaPagar implements Serializable {
     private String descricao;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "status_conta_pagar", nullable = false)
     private StatusContaPagar statusContaPagar;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "data_vencimento_conta_receber")
+    @Column(name = "data_vencimento_conta_receber", nullable = false)
     private Date dtVencimento;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "data_pagamento_conta_receber")
     private Date dtPagamento;
 
-    @Column(name = "valor_total_conta_receber")
+    @Column(name = "valor_total_conta_receber", nullable = false)
     private BigDecimal valorTotal;
 
-    @Column(name = "valor_desconto_conta_receber")
+    @Column(name = "valor_desconto_conta_receber", nullable = false)
     private BigDecimal valorDesconto = BigDecimal.valueOf(0.00);
 
     public Long getId() {
