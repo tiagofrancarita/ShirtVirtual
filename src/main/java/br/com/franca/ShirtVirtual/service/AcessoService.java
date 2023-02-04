@@ -3,6 +3,8 @@ package br.com.franca.ShirtVirtual.service;
 import br.com.franca.ShirtVirtual.model.Acesso;
 import br.com.franca.ShirtVirtual.repository.AcessoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
