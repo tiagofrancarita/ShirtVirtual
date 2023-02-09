@@ -5,10 +5,12 @@ G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\Prod
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\Endereco.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\PessoaJuridica.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\AvaliacaoProduto.java
+G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\ApplicationContextLoad.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\NotaFiscalCompra.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\config\SwaggerConfig.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\security\WebConfigSecurity.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\ItemVendaLoja.java
+G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\service\UserDetailsServiceImpl.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\CupomDesonto.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\NotaFiscalVenda.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\ShirtVirtualApplication.java
@@ -27,5 +29,7 @@ G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\Nota
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\enums\StatusContaPagar.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\FormaPagamento.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\controller\AcessoController.java
+G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\security\JwtTokenAutenticacaoService.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\enums\TipoEndereco.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\MarcaProduto.java
+G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\repository\UsuarioRepository.java
