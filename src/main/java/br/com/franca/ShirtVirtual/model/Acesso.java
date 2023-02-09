@@ -1,6 +1,7 @@
 package br.com.franca.ShirtVirtual.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public class Acesso implements GrantedAuthority {
     @Column(name = "descricao_acesso", nullable = false)
     private String descAcesso;
 
+    @JsonIgnore
     @Override
     public String getAuthority() {
 

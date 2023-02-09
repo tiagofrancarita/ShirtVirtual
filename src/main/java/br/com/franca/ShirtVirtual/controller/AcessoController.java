@@ -64,4 +64,29 @@ public class AcessoController {
 
         return new ResponseEntity<String>("Acesso removido com sucesso",HttpStatus.OK);
     }
+
+    @ResponseBody
+    @DeleteMapping(value = "**/deleteAcessoPorId/{id}")
+    public ResponseEntity<?> deleteAcessoPorId(@PathVariable("id") Long id) {
+
+        acessoRepository.deleteById(id);
+        return new ResponseEntity("Acesso removido com sucesso",HttpStatus.OK);
+    }
+
+    @ResponseBody
+    @GetMapping(value = "**/obterAcesso/{id}")
+    public ResponseEntity<Acesso> obterAcesso(@PathVariable("id") Long id) {
+
+        Acesso acesso = acessoRepository.findById(id).get();
+        return new ResponseEntity<Acesso>(acesso,HttpStatus.OK);
+    }
+
+    @ResponseBody
+    @GetMapping(value = "**/buscarPorDesc/{desc}")
+    public ResponseEntity<List<Acesso>> buscarPorDesc(@PathVariable("desc") String desc) {
+
+        List<Acesso> acesso = acessoRepository.buscarAcessoDescricao(desc);
+
+        return new ResponseEntity<List<Acesso>>(acesso,HttpStatus.OK);
+    }
 }
