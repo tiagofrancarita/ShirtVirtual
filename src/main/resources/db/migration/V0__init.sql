@@ -6,7 +6,7 @@
 -- Dumped by pg_dump version 9.5.2
 
 -- Started on 2023-02-03 00:40:06
-
+--DEBTESTE
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -17,15 +17,15 @@ SET row_security = off;
 
 --
 -- TOC entry 2346 (class 1262 OID 16393)
--- Name: DBDESSH01; Type: DATABASE; Schema: -; Owner: postgres
+-- Name: DEBTESTE; Type: DATABASE; Schema: -; Owner: postgres
 --
 -- Sempre verificar o nome do banco de dados antes de rodar.
---CREATE DATABASE "DBDESSH01" WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'Portuguese_Brazil.1252' LC_CTYPE = 'Portuguese_Brazil.1252';
+--CREATE DATABASE "DEBTESTE" WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'Portuguese_Brazil.1252' LC_CTYPE = 'Portuguese_Brazil.1252';
 
 
-ALTER DATABASE "DBDESSH01" OWNER TO postgres;
+ALTER DATABASE "DEBTESTE" OWNER TO postgres;
 
-\connect "DBDESSH01"
+--\connect "DEBTESTE"
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
