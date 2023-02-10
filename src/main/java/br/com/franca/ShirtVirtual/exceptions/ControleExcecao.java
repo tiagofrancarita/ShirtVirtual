@@ -20,6 +20,18 @@ import java.util.List;
 @ControllerAdvice
 public class ControleExcecao extends ResponseEntityExceptionHandler {
 
+
+    @ExceptionHandler(ExceptionShirtVirtual.class)
+    public ResponseEntity<Object> handleCuston (ExceptionShirtVirtual ex){
+
+        ObjetoErroDto objetoErroDto = new ObjetoErroDto();
+        objetoErroDto.setError(ex.getMessage());
+        objetoErroDto.setCode(HttpStatus.NOT_FOUND.toString());
+
+        return new ResponseEntity<Object>(objetoErroDto, HttpStatus.OK);
+
+    }
+
     @ExceptionHandler
     @Override
     protected ResponseEntity<Object> handleExceptionInternal(Exception ex, Object body, HttpHeaders headers, HttpStatus status, WebRequest request) {
@@ -37,7 +49,7 @@ public class ControleExcecao extends ResponseEntityExceptionHandler {
         }
 
         objetoErroDto.setError(msgErro);
-        objetoErroDto.setCode(status.value() + "==>" + status.getReasonPhrase()) ;
+        objetoErroDto.setCode(status.value() + " ==> " +  status.getReasonPhrase()) ;
 
         return new ResponseEntity<Object>(objetoErroDto, HttpStatus.INTERNAL_SERVER_ERROR);
     }

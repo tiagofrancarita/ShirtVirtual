@@ -18,9 +18,17 @@ public class JwtApiAutheticacaoFilter extends GenericFilterBean {
                          FilterChain chain)
             throws IOException, ServletException {
 
-        Authentication authentication = new JWTTokenAutenticacaoService().getAuthentication((HttpServletRequest) request, (HttpServletResponse) response);
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        chain.doFilter(request,response);
+        try {
 
+            Authentication authentication = new JWTTokenAutenticacaoService().getAuthentication((HttpServletRequest) request, (HttpServletResponse) response);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            chain.doFilter(request, response);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            response.getWriter().write("Ocorreu um erro no sistema, comunique imediatamente ao administrador ou suporte \n" + ex.getMessage() +
+                                            "\n" + ex.getClass() + "\n" + ex.getCause() + "\n");
+
+        }
     }
 }

@@ -176,7 +176,7 @@ class AcessoTestes extends TestCase {
     }
 
     @Test
-    public void testeCadastrarAcesso(){
+    public void testeCadastrarAcesso() throws JsonProcessingException, Exception {
 
         Acesso acesso = new Acesso();
         acesso.setDescAcesso("ROLE_ADMIN_TESTE_controller");
@@ -186,7 +186,7 @@ class AcessoTestes extends TestCase {
     }
 
     @Test
-    public void salvarFormaCorreta(){
+    public void salvarFormaCorreta()throws JsonProcessingException, Exception{
 
         Acesso acesso = new Acesso();
         acesso.setDescAcesso("ROLE_ADMIN");
@@ -195,7 +195,7 @@ class AcessoTestes extends TestCase {
     }
 
     @Test
-    public void testeCarregamento(){
+    public void testeCarregamento()throws JsonProcessingException, Exception{
 
         Acesso acesso = new Acesso();
         acesso.setDescAcesso("ROLE_ADMIN");
@@ -205,7 +205,7 @@ class AcessoTestes extends TestCase {
     }
 
     @Test
-    public void testeDeletarAcesso(){
+    public void testeDeletarAcesso()throws JsonProcessingException, Exception{
 
         Acesso acesso = new Acesso();
         acesso.setDescAcesso("ROLE_ADMIN");
@@ -218,7 +218,7 @@ class AcessoTestes extends TestCase {
     }
 
     @Test
-    public void testeQuery(){
+    public void testeQuery()throws JsonProcessingException, Exception{
 
         Acesso acesso = new Acesso();
         acesso.setDescAcesso("ROLE_ALUNO");
