@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 
 @SpringBootApplication
 @EnableScheduling
@@ -19,7 +19,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ComponentScan(basePackages = {"br.*"})
 @EnableJpaRepositories(basePackages = {"br.com.franca.ShirtVirtual.repository"})
 @EnableTransactionManagement
-@EnableSwagger2
 public class ShirtVirtualApplication {
 
 	private static Logger logger = LoggerFactory.getLogger(ShirtVirtualApplication.class);
@@ -29,6 +28,9 @@ public class ShirtVirtualApplication {
 		logger.info("Iniciando a loja virtual, aguarde.");
 		SpringApplication.run(ShirtVirtualApplication.class, args);
 		logger.info("Loja virtual iniciada com sucesso.");
+
+		//System.out.println(new BCryptPasswordEncoder().encode("123"));
+
 	}
 
 }

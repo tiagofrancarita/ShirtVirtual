@@ -13,9 +13,12 @@ G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\Item
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\service\UserDetailsServiceImpl.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\CupomDesonto.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\NotaFiscalVenda.java
+G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\security\JwtApiAutheticacaoFilter.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\ShirtVirtualApplication.java
+G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\security\JWTLoginFilter.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\Pessoa.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\VendaCompraLojaVirtual.java
+G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\exceptions\ExceptionShirtVirtual.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\Usuario.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\repository\AcessoRepository.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\ImagemProduto.java
@@ -29,7 +32,9 @@ G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\Nota
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\enums\StatusContaPagar.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\FormaPagamento.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\controller\AcessoController.java
-G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\security\JwtTokenAutenticacaoService.java
+G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\security\JWTTokenAutenticacaoService.java
+G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\utils\dto\ObjetoErroDto.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\enums\TipoEndereco.java
+G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\exceptions\ControleExcecao.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\model\MarcaProduto.java
 G:\Repositorios\ShirtVirtual\src\main\java\br\com\franca\ShirtVirtual\repository\UsuarioRepository.java
