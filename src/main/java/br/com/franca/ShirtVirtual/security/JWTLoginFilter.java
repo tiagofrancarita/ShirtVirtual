@@ -3,6 +3,7 @@ package br.com.franca.ShirtVirtual.security;
 import br.com.franca.ShirtVirtual.model.Usuario;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -48,5 +49,17 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 
             e.printStackTrace();
         }
+    }
+
+    @Override
+    protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed) throws IOException, ServletException {
+
+        if (failed instanceof BadCredentialsException){
+            response.getWriter().write("Usuário(a) ou senha inválidos!");
+        }else {
+            response.getWriter().write("Falha ao realizar login!");
+        }
+
+        //super.unsuccessfulAuthentication(request, response, failed);
     }
 }
