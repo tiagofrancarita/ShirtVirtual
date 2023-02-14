@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.setup.DefaultMockMvcBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.util.Calendar;
 import java.util.List;
 
 @SpringBootTest
@@ -39,7 +40,6 @@ class AcessoTestes extends TestCase {
         this.wac = wac;
     }
 
-    /*Teste do end-point de salvar*/
     @Test
     public void testRestApiCadastroAcesso() throws JsonProcessingException, Exception {
 
@@ -47,7 +47,7 @@ class AcessoTestes extends TestCase {
         MockMvc mockMvc = builder.build();
 
         Acesso acesso = new Acesso();
-        acesso.setDescAcesso("ROLE_COMPRADOR");
+        acesso.setDescAcesso("ROLE_COMPRADOR" + Calendar.getInstance().getTimeInMillis());
         ObjectMapper objectMapper = new ObjectMapper();
 
         ResultActions retornoApi = mockMvc
@@ -57,8 +57,6 @@ class AcessoTestes extends TestCase {
                         .contentType(MediaType.APPLICATION_JSON));
 
         System.out.println("Retorno da API: " + retornoApi.andReturn().getResponse().getContentAsString());
-
-        /*Conveter o retorno da API para um obejto de acesso*/
 
         Acesso objetoRetorno = objectMapper.
                 readValue(retornoApi.andReturn().getResponse().getContentAsString(),
@@ -73,7 +71,7 @@ class AcessoTestes extends TestCase {
         MockMvc mockMvc = builder.build();
 
         Acesso acesso = new Acesso();
-        acesso.setDescAcesso("ROLE_TESTE_DELETE");
+        acesso.setDescAcesso("ROLE_TESTE_DELETE" + Calendar.getInstance().getTimeInMillis());
         acesso = acessoRepository.save(acesso);
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -97,9 +95,7 @@ class AcessoTestes extends TestCase {
         MockMvc mockMvc = builder.build();
 
         Acesso acesso = new Acesso();
-
-        acesso.setDescAcesso("ROLE_TESTE_DELETE_ID");
-
+        acesso.setDescAcesso("ROLE_TESTE_DELETE_ID" + Calendar.getInstance().getTimeInMillis());
         acesso = acessoRepository.save(acesso);
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -123,19 +119,18 @@ class AcessoTestes extends TestCase {
         MockMvc mockMvc = builder.build();
 
         Acesso acesso = new Acesso();
-        acesso.setDescAcesso("ROLE_OBTER_ID");
+        acesso.setDescAcesso("ROLE_OBTER_ID" + Calendar.getInstance().getTimeInMillis());
         acesso = acessoRepository.save(acesso);
 
         ObjectMapper objectMapper = new ObjectMapper();
 
         ResultActions retornoApi = mockMvc
-                .perform(MockMvcRequestBuilders.get("/acessos/obterAcesso/" + acesso.getId())
+                .perform(MockMvcRequestBuilders.get("/acessos/buscarAcessoPorId/" + acesso.getId())
                         .content(objectMapper.writeValueAsString(acesso))
                         .accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON));
 
         assertEquals(200, retornoApi.andReturn().getResponse().getStatus());
-
 
         Acesso acessoRetorno = objectMapper.readValue(retornoApi.andReturn().getResponse().getContentAsString(), Acesso.class);
 
@@ -149,13 +144,10 @@ class AcessoTestes extends TestCase {
         MockMvc mockMvc = builder.build();
 
         Acesso acesso = new Acesso();
-
-        acesso.setDescAcesso("ROLE_TESTE_OBTER_LIST");
-
+        acesso.setDescAcesso("ROLE_TESTE_OBTER_LIST" + Calendar.getInstance().getTimeInMillis());
         acesso = acessoRepository.save(acesso);
 
         ObjectMapper objectMapper = new ObjectMapper();
-
         ResultActions retornoApi = mockMvc
                 .perform(MockMvcRequestBuilders.get("/acessos/buscarPorDesc/OBTER_LIST")
                         .content(objectMapper.writeValueAsString(acesso))
@@ -164,11 +156,9 @@ class AcessoTestes extends TestCase {
 
         assertEquals(200, retornoApi.andReturn().getResponse().getStatus());
 
-
         List<Acesso> retornoApiList = objectMapper.
                 readValue(retornoApi.andReturn()
-                                .getResponse().getContentAsString(),
-                        new TypeReference<List<Acesso>>() {});
+                                .getResponse().getContentAsString(), new TypeReference<List<Acesso>>() {});
 
         assertEquals(1, retornoApiList.size());
         assertEquals(acesso.getDescAcesso(), retornoApiList.get(0).getDescAcesso());
@@ -179,7 +169,7 @@ class AcessoTestes extends TestCase {
     public void testeCadastrarAcesso() throws JsonProcessingException, Exception {
 
         Acesso acesso = new Acesso();
-        acesso.setDescAcesso("ROLE_ADMIN_TESTE_controller");
+        acesso.setDescAcesso("ROLE_ADMIN_TESTE_controller" + Calendar.getInstance().getTimeInMillis());
         acesso = acessoController.salvarAcess(acesso).getBody();
         assertEquals(true,acesso.getId() > 0);
 
@@ -188,19 +178,23 @@ class AcessoTestes extends TestCase {
     @Test
     public void salvarFormaCorreta()throws JsonProcessingException, Exception{
 
+        String descricaoAcesso = "ROLE_ADMIN" + Calendar.getInstance().getTimeInMillis();
+
         Acesso acesso = new Acesso();
-        acesso.setDescAcesso("ROLE_ADMIN");
+        acesso.setDescAcesso(descricaoAcesso);
         acesso = acessoController.salvarAcess(acesso).getBody();
-       assertEquals("ROLE_ADMIN",acesso.getDescAcesso());
+
+       assertEquals(descricaoAcesso,acesso.getDescAcesso());
     }
 
     @Test
     public void testeCarregamento()throws JsonProcessingException, Exception{
 
         Acesso acesso = new Acesso();
-        acesso.setDescAcesso("ROLE_ADMIN");
+        acesso.setDescAcesso("ROLE_ADMIN2" + Calendar.getInstance().getTimeInMillis());
         acesso = acessoController.salvarAcess(acesso).getBody();
         Acesso acesso2 = acessoRepository.findById(acesso.getId()).get();
+
         assertEquals(acesso.getId(), acesso2.getId());
     }
 
@@ -208,11 +202,12 @@ class AcessoTestes extends TestCase {
     public void testeDeletarAcesso()throws JsonProcessingException, Exception{
 
         Acesso acesso = new Acesso();
-        acesso.setDescAcesso("ROLE_ADMIN");
+        acesso.setDescAcesso("ROLE_ADMIN4" + Calendar.getInstance().getTimeInMillis());
         acesso = acessoController.salvarAcess(acesso).getBody();
         acessoRepository.deleteById(acesso.getId());
         acessoRepository.flush();
         Acesso acessoDelete = acessoRepository.findById(acesso.getId()).orElse(null);
+
         assertEquals(true, acessoDelete == null);
 
     }
@@ -221,9 +216,10 @@ class AcessoTestes extends TestCase {
     public void testeQuery()throws JsonProcessingException, Exception{
 
         Acesso acesso = new Acesso();
-        acesso.setDescAcesso("ROLE_ALUNO");
+        acesso.setDescAcesso("ROLE_ALUNO" + Calendar.getInstance().getTimeInMillis());
         acesso = acessoController.salvarAcess(acesso).getBody();
         List<Acesso> acessos = acessoRepository.buscarAcessoDescricao("ALUNO".trim().toUpperCase());
+
         assertEquals(1, acessos.size());
         acessoRepository.deleteById(acesso.getId());
 

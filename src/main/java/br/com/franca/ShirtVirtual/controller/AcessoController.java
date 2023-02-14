@@ -4,15 +4,13 @@ import br.com.franca.ShirtVirtual.exceptions.ExceptionShirtVirtual;
 import br.com.franca.ShirtVirtual.model.Acesso;
 import br.com.franca.ShirtVirtual.repository.AcessoRepository;
 import br.com.franca.ShirtVirtual.service.AcessoService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.Locale;
+
 
 @Controller
 @RestController
@@ -20,7 +18,7 @@ import java.util.Locale;
 //@Api(value = "entry-point para gerenciar categorias", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, tags = {"entrypoint-categorias"})
 public class AcessoController {
 
-    private static final Logger logger = LoggerFactory.getLogger(AcessoController.class);
+
     final String INICIO_LISTAR_ACESSO = "Iniciando a listagem de acesso!";
     final String LISTAGEM_COM_SUCESSO = "Iniciando a listagem de acesso!";
     final String ERRO_DESCRICAO_CADASTRADA = "Já existe um acesso com essa descrição.!";
@@ -34,14 +32,11 @@ public class AcessoController {
         this.acessoRepository = acessoRepository;
     }
 
-
     //@ApiOperation(value = "Lista todos os acessos cadastrados")
     @GetMapping("**/listarAcessos")
     public List<Acesso> listarAcessos(){
 
-        logger.info(INICIO_LISTAR_ACESSO);
         return acessoRepository.findAll();
-
 
     }
 
@@ -99,8 +94,6 @@ public class AcessoController {
     @ResponseBody
     @GetMapping(value = "**/buscarPorDesc/{desc}")
     public ResponseEntity<List<Acesso>> buscarPorDesc(@PathVariable("desc") String desc) {
-
-
 
         List<Acesso> acesso = acessoRepository.buscarAcessoDescricao(desc);
 

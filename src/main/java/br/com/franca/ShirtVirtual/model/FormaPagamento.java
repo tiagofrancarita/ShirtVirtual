@@ -20,6 +20,10 @@ public class FormaPagamento implements Serializable {
     @Column(name = "descricao_forma_pagamento", nullable = false)
     private String descFormaPagamento;
 
+    @ManyToOne(targetEntity = Pessoa.class)
+    @JoinColumn(name = "empresa_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "empresa_id_fk"))
+    private Pessoa empresa;
+
     public Long getId() {
         return id;
     }
@@ -34,6 +38,14 @@ public class FormaPagamento implements Serializable {
 
     public void setDescFormaPagamento(String descFormaPagamento) {
         this.descFormaPagamento = descFormaPagamento;
+    }
+
+    public Pessoa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Pessoa empresa) {
+        this.empresa = empresa;
     }
 
     @Override

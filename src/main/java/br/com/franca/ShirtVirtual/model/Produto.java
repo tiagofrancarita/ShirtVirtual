@@ -60,6 +60,10 @@ public class Produto implements Serializable {
     @Column(name = "quantidade_clique_produto")
     private Integer qtdClickProduto = 0;
 
+    @ManyToOne(targetEntity = Pessoa.class)
+    @JoinColumn(name = "empresa_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "empresa_id_fk"))
+    private Pessoa empresa;
+
     public Long getId() {
         return id;
     }
@@ -170,6 +174,14 @@ public class Produto implements Serializable {
 
     public void setQtdClickProduto(Integer qtdClickProduto) {
         this.qtdClickProduto = qtdClickProduto;
+    }
+
+    public Pessoa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Pessoa empresa) {
+        this.empresa = empresa;
     }
 
     @Override

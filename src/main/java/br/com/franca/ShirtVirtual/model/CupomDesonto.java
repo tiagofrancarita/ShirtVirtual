@@ -31,6 +31,10 @@ public class CupomDesonto implements Serializable {
     @Column(name = "data_validade_cupom", nullable = false)
     private Date dtValidadeCupom;
 
+    @ManyToOne(targetEntity = Pessoa.class)
+    @JoinColumn(name = "empresa_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "empresa_id_fk"))
+    private Pessoa empresa;
+
     public Long getId() {
         return id;
     }
@@ -69,6 +73,14 @@ public class CupomDesonto implements Serializable {
 
     public void setDtValidadeCupom(Date dtValidadeCupom) {
         this.dtValidadeCupom = dtValidadeCupom;
+    }
+
+    public Pessoa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Pessoa empresa) {
+        this.empresa = empresa;
     }
 
     @Override
